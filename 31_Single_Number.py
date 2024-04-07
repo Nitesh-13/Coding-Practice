@@ -7,20 +7,8 @@ You must implement a solution with a linear runtime complexity and use only cons
 
 '''
 
-# New Approach needed
-
-nums = [2,2,1]
-n = len(nums)
-str = ""
-newStr = ""
-mx = max(nums)
-for i in range(mx+1):
-    str += "0"
+nums = [5,1,5,4,1]
+x = 0
 for element in nums:
-    if str[element] == "0":
-        newStr = str[:element] + "1" + str[element+1:]
-    else:
-        newStr = str[:element] + "2" + str[element+1:]
-    str = newStr
-
-print(str[str.find("1")])
+    x ^= element
+print(x)
