@@ -14,11 +14,24 @@ arr = list(map(int, input().split(' ')))
 maxi = float('-inf')
 sum = 0
 
+# Finds only the maximum sum from all subarrays
+# for element in arr:
+#     sum += element
+#     maxi = max(sum, maxi)
+#     sum = max(sum,0)
+
+# Finds subarrray with maximum sum
+subarr = []
 for element in arr:
     sum += element
+    subarr.append(element)
+    if sum > maxi:
+        maxi = sum
     maxi = max(sum, maxi)
-    sum = max(sum,0)
+    if sum < 0:
+        sum = 0
+        subarr.clear()
 
-print(maxi)
+print(maxi, subarr)
 
 # Just carry the sum forward only if its positive
