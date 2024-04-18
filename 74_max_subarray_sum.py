@@ -13,9 +13,9 @@ n = len(arr)
 maxSum = float('-inf')
 
 for i in range(n):
+    tsum = 0
     for j in range(i,n):
-        subarr = arr[i:j+1]
-        tsum = sum(subarr)
+        tsum += arr[j]
         maxSum = tsum if maxSum < tsum else maxSum
         
 print(maxSum)
